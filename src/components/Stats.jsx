@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart3, Target, Users, Coffee } from 'lucide-react'
+import { BarChart3, Target, Users } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useCountUp } from '../hooks/useCountUp'
 
@@ -28,16 +28,15 @@ const Stats = () => {
   const [ref, isVisible] = useScrollAnimation(0.2)
 
   const stats = [
-    { icon: BarChart3, number: 4000, suffix: '+', label: 'Campanhas Geradas' },
-    { icon: Target, number: 10000, suffix: '+', label: 'Leads por Mês' },
-    { icon: Users, number: 180, suffix: '+', label: 'Clientes que Viraram Amigos' },
-    { icon: Coffee, number: 83, suffix: '+', label: 'Xícaras de Café por Dia' },
+    { icon: BarChart3, number: 5000, suffix: '+', label: 'Campanhas Geradas' },
+    { icon: Target, number: 15000, suffix: '', label: 'Leads por Mês' },
+    { icon: Users, number: 350, suffix: '+', label: 'Clientes que Viraram Amigos' },
   ]
 
   return (
     <section ref={ref} className={`py-20 bg-gradient-to-r from-[#bed631] to-[#a8c02a] ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <StatItem
               key={index}

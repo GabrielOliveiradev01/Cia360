@@ -31,12 +31,14 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#444649] mb-4">
-            Sobre a <span className="text-[#bed631]">CIA360</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#444649] mb-6">
+            Sobre <span className="text-[#bed631]">Nós</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Somos uma agência sob medida. Nossos clientes e suas necessidades são atendidas individualmente, 
-            sem truques e nem fórmulas mágicas de prateleira.
+          <div className="inline-block px-6 py-3 bg-[#bed631] text-white font-bold text-xl rounded-lg mb-6">
+            NOSSO CORE BUSINESS É 100% IMOBILIÁRIO
+          </div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mt-6">
+            Antes de mais nada, vamos avisando: Somos diferentes! Não buscamos a grandeza, preferimos a eficiência!
           </p>
         </div>
 
@@ -44,13 +46,16 @@ const About = () => {
         <div className="mb-16">
           <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
             <p className="text-lg mb-6">
-              Para a CIA, cada produto é como um filho único e fazemos questão de participar desde a gestação 
-              até a maturidade das nossas "crias". Em mais de 20 anos de atuação são mais de 350 cases onde, 
-              de alguma forma, acrescentamos valor ao produto final.
+              Somos uma agência sob medida, nossos clientes e suas necessidades são atendidas individualmente e não existem truques e nem fórmulas mágicas de prateleira para isso.
+            </p>
+            <p className="text-lg mb-6">
+              Para a CIA, cada produto é como um filho único e fazemos questão de participar desde a gestação até a maturidade das nossas "crias".
+            </p>
+            <p className="text-lg mb-6">
+              Em mais de 20 anos de atuação são mais de 350 cases onde, de alguma forma, acrescentamos valor ao produto final.
             </p>
             <p className="text-lg">
-              Assim é o jeito CIA de trabalhar a comunicação. Uma agência que convive e sobrevive no competitivo 
-              mercado imobiliário. Trabalhamos 24h/dia, 7x na semana.
+              Assim é o jeito CIA de trabalhar a comunicação. Uma agência que convive e sobrevive no competitivo mercado imobiliário. Trabalhamos 24h/dia 7x na semana.
             </p>
           </div>
         </div>

@@ -41,8 +41,7 @@ const Services = () => {
             "Se você não sabe onde quer chegar, qualquer caminho serve".
           </p>
           <p className="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">
-            Antes de qualquer coisa, a CIA estabelece metas e define, junto com o cliente, o que deve ser feito 
-            e quais os recursos mais adequados para se obter os melhores resultados.
+            Antes de qualquer coisa, a CIA estabelece metas e define, junto com o cliente, o que deve ser feito e quais os recursos mais adequados para se obter os melhores resultados.
           </p>
         </div>
 
