@@ -78,3 +78,5 @@ Se tiver problemas, verifique:
 2. Console do navegador para erros
 3. Arquivo `DEPLOY.md` para instruções detalhadas
 
+
+

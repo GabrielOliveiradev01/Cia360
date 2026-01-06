@@ -37,9 +37,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src="/logo.png"
+              src="/logociabranca.png"
               alt="CIA360"
-              className="h-10 w-auto mb-4 brightness-0 invert"
+              className="h-10 w-auto mb-4"
             />
             <p className="text-slate-400 mb-4 leading-relaxed">
               Agência especializada em comunicação imobiliária. Mais de 20 anos transformando empreendimentos em sucessos.

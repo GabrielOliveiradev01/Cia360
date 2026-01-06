@@ -80,7 +80,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <img
-              src={shouldShowBackground ? "/logo.png" : "/logo-branca.png"}
+              src={shouldShowBackground ? "/logociaescura.png" : "/logociabranca.png"}
               alt="CIA360"
               className="h-10 md:h-12 w-auto transition-all duration-300"
             />
