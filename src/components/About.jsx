@@ -34,8 +34,16 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-[#444649] mb-6">
             Sobre <span className="text-[#bed631]">Nós</span>
           </h2>
-          <div className="inline-block px-6 py-3 bg-[#bed631] text-white font-bold text-xl rounded-lg mb-6">
-            NOSSO CORE BUSINESS É 100% IMOBILIÁRIO
+          <div className="mb-6">
+            <div className="text-xl md:text-2xl font-bold text-[#444649] mb-2">
+              NOSSO CORE BUSINESS É
+            </div>
+            <div className="text-5xl md:text-6xl font-bold text-[#bed631] mb-2">
+              100%
+            </div>
+            <div className="text-xl md:text-2xl font-bold text-[#444649]">
+              IMOBILIÁRIO
+            </div>
           </div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mt-6">
             Antes de mais nada, vamos avisando: Somos diferentes! Não buscamos a grandeza, preferimos a eficiência!
@@ -54,9 +62,16 @@ const About = () => {
             <p className="text-lg mb-6">
               Em mais de 20 anos de atuação são mais de 350 cases onde, de alguma forma, acrescentamos valor ao produto final.
             </p>
-            <p className="text-lg">
-              Assim é o jeito CIA de trabalhar a comunicação. Uma agência que convive e sobrevive no competitivo mercado imobiliário. Trabalhamos 24h/dia 7x na semana.
+            <p className="text-lg mb-6">
+              Assim é o jeito CIA de trabalhar a comunicação. Uma agência que convive e sobrevive no competitivo mercado imobiliário.
             </p>
+          </div>
+          
+          {/* Destaque Trabalhamos */}
+          <div className="mt-8 text-center">
+            <div className="text-3xl md:text-4xl font-bold text-[#444649]">
+              Trabalhamos 24h/dia 7x na semana
+            </div>
           </div>
         </div>
 
