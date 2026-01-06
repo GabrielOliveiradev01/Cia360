@@ -51,6 +51,15 @@ const Hero = () => {
           </div>
         ))}
       </div>
+      
+      {/* Logo Centralizada */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <img
+          src="/slogan.png"
+          alt="CIA360 Logo"
+          className="w-80 md:w-96 lg:w-[32rem] xl:w-[36rem] h-auto object-contain drop-shadow-2xl"
+        />
+      </div>
     </section>
   )
 }
