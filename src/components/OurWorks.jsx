@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { X, Plus } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const OurWorks = () => {
-  const [ref, isVisible] = useScrollAnimation(0.2)
+  const [ref, isVisible] = useScrollAnimation(0.1) // Threshold menor para aparecer mais cedo
   const [selectedImage, setSelectedImage] = useState(null)
+  const [loadedImages, setLoadedImages] = useState(new Set())
+  const imageRefs = useRef({})
 
   // Fechar modal com ESC
   useEffect(() => {
@@ -24,6 +26,39 @@ const OurWorks = () => {
       document.body.style.overflow = 'unset'
     }
   }, [selectedImage])
+
+  // Intersection Observer para carregar imagens apenas quando visíveis
+  useEffect(() => {
+    if (!isVisible) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const imageId = entry.target.dataset.imageId
+            if (imageId && !loadedImages.has(imageId)) {
+              setLoadedImages((prev) => new Set([...prev, imageId]))
+            }
+          }
+        })
+      },
+      {
+        rootMargin: '100px', // Começa a carregar 100px antes de aparecer
+        threshold: 0.01,
+      }
+    )
+
+    // Observa os containers, não as imagens
+    Object.values(imageRefs.current).forEach((containerRef) => {
+      if (containerRef) observer.observe(containerRef)
+    })
+
+    return () => {
+      Object.values(imageRefs.current).forEach((containerRef) => {
+        if (containerRef) observer.unobserve(containerRef)
+      })
+    }
+  }, [isVisible, loadedImages])
 
   const works = [
     // Novas obras (em primeiro lugar)
@@ -246,31 +281,52 @@ const OurWorks = () => {
 
           {/* Works Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
-            {works.map((work, index) => (
-              <div
-                key={work.id}
-                className={`group relative overflow-hidden cursor-pointer aspect-square ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 0.05}s` }}
-                onClick={() => setSelectedImage(work)}
-              >
-                {/* Image - mostra toda a imagem sem cortes */}
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                
-                {/* Overlay com + no hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-16 h-16 rounded-full bg-[#bed631] flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <Plus className="w-8 h-8 text-white" strokeWidth={3} />
+            {works.map((work, index) => {
+              // Carrega as primeiras 15 imediatamente quando a seção aparece, depois usa lazy loading
+              const shouldLoad = isVisible && (loadedImages.has(work.id.toString()) || index < 15)
+              
+              return (
+                <div
+                  key={work.id}
+                  ref={(el) => {
+                    if (el) imageRefs.current[work.id] = el
+                  }}
+                  data-image-id={work.id}
+                  className={`group relative overflow-hidden cursor-pointer aspect-square ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
+                  style={{ animationDelay: `${Math.min(index * 0.02, 0.4)}s` }}
+                  onClick={() => setSelectedImage(work)}
+                >
+                  {/* Placeholder enquanto não carrega */}
+                  {!shouldLoad && (
+                    <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 animate-pulse flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-slate-400/30"></div>
+                    </div>
+                  )}
+                  
+                  {/* Image - mostra toda a imagem sem cortes */}
+                  {shouldLoad && (
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      onLoad={() => {
+                        setLoadedImages((prev) => new Set([...prev, work.id.toString()]))
+                      }}
+                    />
+                  )}
+                  
+                  {/* Overlay com + no hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-16 h-16 rounded-full bg-[#bed631] flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                        <Plus className="w-8 h-8 text-white" strokeWidth={3} />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* CTA */}
