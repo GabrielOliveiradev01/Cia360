@@ -111,12 +111,14 @@ const Navbar = () => {
                 </button>
               )
             ))}
-            <button
-              onClick={() => scrollToSection('contato')}
-              className="px-6 py-2 bg-[#bed631] hover:bg-[#a8c02a] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://wa.me/5511989539200?text=Olá! Gostaria de solicitar um diagnóstico para meu empreendimento."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-[#bed631] hover:bg-[#a8c02a] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 inline-block"
             >
               Solicitar Diagnóstico
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,12 +164,15 @@ const Navbar = () => {
                   </button>
                 )
               ))}
-              <button
-                onClick={() => scrollToSection('contato')}
-                className="w-full px-6 py-2 bg-[#bed631] hover:bg-[#a8c02a] text-white font-semibold rounded-lg transition-all duration-300 mt-2"
+              <a
+                href="https://wa.me/5511989539200?text=Olá! Gostaria de solicitar um diagnóstico para meu empreendimento."
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full px-6 py-2 bg-[#bed631] hover:bg-[#a8c02a] text-white font-semibold rounded-lg transition-all duration-300 mt-2 inline-block text-center"
               >
                 Solicitar Diagnóstico
-              </button>
+              </a>
             </div>
           </div>
         )}

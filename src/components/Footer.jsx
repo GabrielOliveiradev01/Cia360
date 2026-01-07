@@ -1,5 +1,6 @@
 import React from 'react'
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -13,9 +14,7 @@ const Footer = () => {
     ],
     recursos: [
       { label: 'Blog', href: '#blog' },
-      { label: 'Insights', href: '#insights' },
-      { label: 'Ferramentas', href: '#ferramentas' },
-      { label: 'FAQ', href: '#faq' },
+      { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
     ],
     legal: [
       { label: 'Política de Privacidade', href: '#privacidade' },
@@ -25,9 +24,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Youtube, href: 'https://www.youtube.com/channel/UCu_63yrlAcgS20a6EoZHz2w', label: 'YouTube', target: '_blank', rel: 'noopener noreferrer' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/cia-da-comunica%C3%A7%C3%A3o', label: 'LinkedIn', target: '_blank', rel: 'noopener noreferrer' },
+    { icon: Instagram, href: 'https://www.instagram.com/ciadom2/', label: 'Instagram', target: '_blank', rel: 'noopener noreferrer' },
+    { icon: Facebook, href: 'https://www.facebook.com/ciadom2/', label: 'Facebook', target: '_blank', rel: 'noopener noreferrer' },
   ]
 
   return (
@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src="/logociabranca.png"
+              src="/logociaescura.png"
               alt="CIA360"
               className="h-10 w-auto mb-4"
             />
@@ -51,6 +51,8 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
+                    target={social.target}
+                    rel={social.rel}
                     aria-label={social.label}
                     className="w-10 h-10 rounded-lg bg-[#161f31]/80 hover:bg-[#bed631] flex items-center justify-center transition-colors duration-300"
                   >
@@ -84,12 +86,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.recursos.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="hover:text-[#bed631] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link
+                      to={link.href}
+                      className="hover:text-[#bed631] transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="hover:text-[#bed631] transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -107,14 +118,20 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#bed631] flex-shrink-0" />
-                <a href="tel:+551100000000" className="hover:text-[#bed631] transition-colors">
-                  (11) 0000-0000
+                <a href="tel:+551130570227" className="hover:text-[#bed631] transition-colors">
+                  (11) 3057-0227
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle className="w-5 h-5 text-[#bed631] flex-shrink-0" />
+                <a href="https://wa.me/5511989539200" target="_blank" rel="noopener noreferrer" className="hover:text-[#bed631] transition-colors">
+                  +55 11 98953-9200
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#bed631] flex-shrink-0" />
-                <a href="mailto:contato@cia360.com.br" className="hover:text-[#bed631] transition-colors">
-                  contato@cia360.com.br
+                <a href="mailto:olá@cia360.com.br" className="hover:text-[#bed631] transition-colors">
+                  olá@cia360.com.br
                 </a>
               </li>
             </ul>

@@ -40,12 +40,12 @@ const CTA = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-white/90">
           <div className="flex items-center gap-2">
             <Mail className="w-5 h-5" />
-            <span>contato@cia360.com.br</span>
+            <a href="mailto:olá@cia360.com.br" className="hover:underline">olá@cia360.com.br</a>
           </div>
           <div className="hidden sm:block w-1 h-1 rounded-full bg-white/50"></div>
           <div className="flex items-center gap-2">
             <Phone className="w-5 h-5" />
-            <span>(11) 0000-0000</span>
+            <a href="tel:+551130570227" className="hover:underline">(11) 3057-0227</a>
           </div>
         </div>
 

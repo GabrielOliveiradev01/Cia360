@@ -1,5 +1,5 @@
 import React from 'react'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Location = () => {
@@ -9,8 +9,9 @@ const Location = () => {
     street: 'Av Engenheiro Luiz Carlos Berrini, 936',
     city: 'São Paulo, SP',
     zipCode: '04571-000',
-    phone: '(11) 0000-0000',
-    email: 'contato@cia360.com.br',
+    phone: '(11) 3057-0227',
+    whatsapp: '+55 11 98953-9200',
+    email: 'olá@cia360.com.br',
     hours: 'Segunda a Sexta: 9h às 18h'
   }
 
@@ -54,8 +55,22 @@ const Location = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#444649] mb-2">Telefone</h3>
-                  <a href={`tel:${address.phone.replace(/\s/g, '')}`} className="text-slate-700 hover:text-[#bed631] transition-colors">
+                  <a href="tel:+551130570227" className="text-slate-700 hover:text-[#bed631] transition-colors block mb-2">
                     {address.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-[#bed631]/10 flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-6 h-6 text-[#bed631]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#444649] mb-2">WhatsApp</h3>
+                  <a href="https://wa.me/5511989539200" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-[#bed631] transition-colors block">
+                    {address.whatsapp}
                   </a>
                 </div>
               </div>
