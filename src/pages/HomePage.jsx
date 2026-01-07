@@ -38,7 +38,6 @@ function HomePage() {
       <Hero />
       <Stats />
       <About />
-      <Team />
       <Services />
       <Dejavu />
       <OurWorks />
@@ -47,6 +46,7 @@ function HomePage() {
       <Diferentials />
       <Testimonials />
       <Blog />
+      <Team />
       <Location />
       <CTA />
       <Footer />
