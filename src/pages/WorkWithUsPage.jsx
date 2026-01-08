@@ -15,27 +15,25 @@ const WorkWithUsPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const images = [
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.46 (1).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.46 (2).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.46 (3).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.46 (4).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.46.jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (1).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (2).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (3).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (4).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (5).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (6).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (7).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47 (8).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.47.jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.48 (1).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.48 (2).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.48 (3).jpeg',
-    '/Imagenscia/WhatsApp Image 2026-01-06 at 16.13.48.jpeg',
+    '/Imagenscia/1.jpeg',
+    '/Imagenscia/2.jpeg',
+    '/Imagenscia/3.jpeg',
+    '/Imagenscia/4.jpeg',
+    '/Imagenscia/5.jpeg',
+    '/Imagenscia/6.jpeg',
+    '/Imagenscia/7.jpeg',
+    '/Imagenscia/8.jpeg',
+    '/Imagenscia/9.jpeg',
+    '/Imagenscia/10.jpeg',
+    '/Imagenscia/11.jpeg',
+    '/Imagenscia/12.jpeg',
+    '/Imagenscia/13.jpeg',
   ]
 
   useEffect(() => {
+    // Garantir que começa na primeira imagem
+    setCurrentIndex(0)
+    
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
     }, 4000)

@@ -286,16 +286,16 @@ const OurWorks = () => {
               const shouldLoad = isVisible && (loadedImages.has(work.id.toString()) || index < 15)
               
               return (
-                <div
-                  key={work.id}
+              <div
+                key={work.id}
                   ref={(el) => {
                     if (el) imageRefs.current[work.id] = el
                   }}
                   data-image-id={work.id}
-                  className={`group relative overflow-hidden cursor-pointer aspect-square ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
+                className={`group relative overflow-hidden cursor-pointer aspect-square ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${Math.min(index * 0.02, 0.4)}s` }}
-                  onClick={() => setSelectedImage(work)}
-                >
+                onClick={() => setSelectedImage(work)}
+              >
                   {/* Placeholder enquanto não carrega */}
                   {!shouldLoad && (
                     <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 animate-pulse flex items-center justify-center">
@@ -303,28 +303,28 @@ const OurWorks = () => {
                     </div>
                   )}
                   
-                  {/* Image - mostra toda a imagem sem cortes */}
+                {/* Image - mostra toda a imagem sem cortes */}
                   {shouldLoad && (
-                    <img
-                      src={work.image}
-                      alt={work.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
                       onLoad={() => {
                         setLoadedImages((prev) => new Set([...prev, work.id.toString()]))
                       }}
-                    />
+                />
                   )}
-                  
-                  {/* Overlay com + no hover */}
+                
+                {/* Overlay com + no hover */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-16 h-16 rounded-full bg-[#bed631] flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <Plus className="w-8 h-8 text-white" strokeWidth={3} />
-                      </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 rounded-full bg-[#bed631] flex items-center justify-center shadow-xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                      <Plus className="w-8 h-8 text-white" strokeWidth={3} />
                     </div>
                   </div>
                 </div>
+              </div>
               )
             })}
           </div>

@@ -81,30 +81,30 @@ const Partners = () => {
           {partners.map((partner, index) => {
             const isHolos = partner.name === 'Holos'
             return (
-              <div
-                key={index}
-                className={`group flex items-center justify-center p-4 md:p-6 bg-white rounded-lg border border-slate-200 hover:border-[#bed631] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <img
+            <div
+              key={index}
+              className={`group flex items-center justify-center p-4 md:p-6 bg-white rounded-lg border border-slate-200 hover:border-[#bed631] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <img
                   src={encodeURI(partner.logo)}
-                  alt={partner.name}
+                alt={partner.name}
                   className={`w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0 ${
                     isHolos ? 'max-h-20 md:max-h-24' : 'max-h-12 md:max-h-16'
                   }`}
-                  loading="lazy"
-                  onError={(e) => {
+                loading="lazy"
+                onError={(e) => {
                     console.error(`Erro ao carregar logo: ${partner.name} - ${partner.logo}`);
-                    e.target.style.display = 'none';
+                  e.target.style.display = 'none';
                     e.target.parentElement.innerHTML = `<div class="text-slate-400 text-xs text-center p-2">${partner.name}</div>`;
                   }}
                   onLoad={() => {
                     if (partner.name === 'GCS Construções') {
                       console.log(`GCS Construções carregada com sucesso: ${partner.logo}`);
                     }
-                  }}
-                />
-              </div>
+                }}
+              />
+            </div>
             )
           })}
         </div>
