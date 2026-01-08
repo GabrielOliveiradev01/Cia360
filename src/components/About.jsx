@@ -60,7 +60,7 @@ const About = () => {
               Para a CIA, cada produto é como um filho único e fazemos questão de participar desde a gestação até a maturidade das nossas "crias".
             </p>
             <p className="text-lg mb-6">
-              Em mais de 20 anos de atuação são mais de 350 cases onde, de alguma forma, acrescentamos valor ao produto final.
+              Em mais de 20 anos de atuação são mais de 1500 lançamentos onde, de alguma forma, acrescentamos valor ao produto final.
             </p>
             <p className="text-lg mb-6">
               Assim é o jeito CIA de trabalhar a comunicação. Uma agência que convive e sobrevive no competitivo mercado imobiliário.

@@ -26,8 +26,8 @@ const Diferentials = () => {
     },
     {
       icon: Award,
-      title: 'Mais de 350 Cases',
-      description: 'Experiência comprovada em mais de 20 anos de atuação. Mais de 350 empreendimentos onde acrescentamos valor.',
+      title: 'Mais de 1500 Lançamentos',
+      description: 'Experiência comprovada em mais de 20 anos de atuação. Mais de 1500 empreendimentos onde acrescentamos valor.',
       color: 'text-slate-500'
     },
     {

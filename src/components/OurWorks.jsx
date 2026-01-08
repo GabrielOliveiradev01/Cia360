@@ -274,7 +274,7 @@ const OurWorks = () => {
                 Após mais de <strong className="text-[#444649]">20 anos de atuação</strong>, temos como filosofia participar do <strong className="text-[#444649]">desenvolvimento e formatação do empreendimento</strong> desde a origem.
               </p>
               <p>
-                São mais de <strong className="text-[#444649]">150 cases</strong> onde, de alguma forma, acrescentamos valor ao produto final. Seja na arquitetura, no paisagismo, na decoração de interiores, e claro, na sua comunicação.
+                São mais de <strong className="text-[#444649]">1500 lançamentos</strong> onde, de alguma forma, acrescentamos valor ao produto final. Seja na arquitetura, no paisagismo, na decoração de interiores, e claro, na sua comunicação.
               </p>
             </div>
           </div>
@@ -331,14 +331,11 @@ const OurWorks = () => {
 
           {/* CTA */}
           <div className={`mt-12 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: `${works.length * 0.05 + 0.3}s` }}>
-            <p className="text-lg text-slate-600 mb-4">
-              Mais de <span className="font-bold text-[#444649]">{works.length} obras</span> de sucesso
-            </p>
             <a
               href="#contato"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#bed631] hover:bg-[#a8c02a] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              Quero um case de sucesso também
+              Quero um lançamento de sucesso também
             </a>
           </div>
         </div>

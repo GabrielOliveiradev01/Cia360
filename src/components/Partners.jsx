@@ -109,12 +109,6 @@ const Partners = () => {
           })}
         </div>
 
-        {/* Footer Text */}
-        <div className={`mt-16 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-          <p className="text-lg text-slate-600">
-            Mais de <span className="font-bold text-[#444649]">{partners.length} parceiros</span> que confiam em nosso trabalho
-          </p>
-        </div>
       </div>
     </section>
   )

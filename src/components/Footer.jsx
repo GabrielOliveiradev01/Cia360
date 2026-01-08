@@ -10,7 +10,7 @@ const Footer = () => {
       { label: 'Sobre Nós', href: '#sobre' },
       { label: 'Serviços', href: '#servicos' },
       { label: 'Metodologia', href: '#metodologia' },
-      { label: 'Cases', href: '#cases' },
+      { label: 'Lançamentos', href: '#cases' },
     ],
     recursos: [
       { label: 'Blog', href: '#blog' },

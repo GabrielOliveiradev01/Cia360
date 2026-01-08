@@ -31,7 +31,7 @@ const Methodology = () => {
       number: '04',
       icon: CheckCircle,
       title: 'Resultados e Crescimento',
-      description: 'Acompanhamos desde a gestação até a maturidade. Mais de 350 cases onde acrescentamos valor ao produto final e transformamos clientes em amigos.',
+      description: 'Acompanhamos desde a gestação até a maturidade. Mais de 1500 lançamentos onde acrescentamos valor ao produto final e transformamos clientes em amigos.',
       color: 'from-orange-500 to-orange-600'
     },
   ]
@@ -99,7 +99,7 @@ const Methodology = () => {
         {/* CTA */}
         <div className={`mt-16 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
           <p className="text-lg text-slate-600 mb-6">
-            Pronto para transformar seu empreendimento em um case de sucesso?
+            Pronto para transformar seu empreendimento em um lançamento de sucesso?
           </p>
           <button
             onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}

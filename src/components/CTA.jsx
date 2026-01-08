@@ -52,7 +52,7 @@ const CTA = () => {
         {/* Trust Badge */}
         <div className="mt-12 pt-8 border-t border-white/30">
           <p className="text-white/80 text-sm">
-            ✓ Mais de 350 cases de sucesso • ✓ Atendimento 24/7 • ✓ Especialistas em mercado imobiliário
+            ✓ Mais de 1500 lançamentos de sucesso • ✓ Atendimento 24/7 • ✓ Especialistas em mercado imobiliário
           </p>
         </div>
       </div>
