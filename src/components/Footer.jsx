@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src="/logociaescura.png"
+              src="/logonocacia360.png"
               alt="CIA360"
               className="h-10 w-auto mb-4"
             />
